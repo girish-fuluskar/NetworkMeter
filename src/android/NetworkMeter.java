@@ -129,7 +129,7 @@ public class NetworkMeter extends CordovaPlugin {
 
         };
 
-        mBuilder = new Notification.Builder(this);
+        mBuilder = new Notification.Builder(getActivity());
         mBuilder.setSmallIcon(Icon.createWithBitmap(createBitmapFromString("0", " KB")));
         mBuilder.setContentTitle("");
         mBuilder.setVisibility(Notification.VISIBILITY_SECRET);
@@ -137,17 +137,17 @@ public class NetworkMeter extends CordovaPlugin {
 
         /*Creates a special PendingIntent so that the app will open when the notification window
         is tapped*/
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(getActivity(), MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent
+        PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, intent, PendingIntent
                 .FLAG_UPDATE_CURRENT);
         mBuilder.setContentIntent(pendingIntent);
 
 
-        mNotifyMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotifyMgr = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mNotifyMgr.notify(mNotificationId, mBuilder.build());
 
-        startForeground(mNotificationId, mBuilder.build());
+        context.startForeground(mNotificationId, mBuilder.build());
 
     }
 
