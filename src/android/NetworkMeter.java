@@ -110,7 +110,7 @@ public class NetworkMeter extends CordovaPlugin {
     }
 
     //Notification initializer
-    private void initializeNotification() {
+    /*private void initializeNotification(Context context) {
 
         mHandler = new Handler(Looper.getMainLooper()) {
 
@@ -129,15 +129,14 @@ public class NetworkMeter extends CordovaPlugin {
 
         };
 
-        mBuilder = new Notification.Builder(getActivity());
+        mBuilder = new Notification.Builder(context);
         mBuilder.setSmallIcon(Icon.createWithBitmap(createBitmapFromString("0", " KB")));
         mBuilder.setContentTitle("");
         mBuilder.setVisibility(Notification.VISIBILITY_SECRET);
         mBuilder.setOngoing(true);
 
-        /*Creates a special PendingIntent so that the app will open when the notification window
-        is tapped*/
-        Intent intent = new Intent(getActivity(), MainActivity.class);
+        
+        Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 0, intent, PendingIntent
                 .FLAG_UPDATE_CURRENT);
@@ -149,7 +148,7 @@ public class NetworkMeter extends CordovaPlugin {
 
         context.startForeground(mNotificationId, mBuilder.build());
 
-    }
+    }*/
 
     //Get Network Download Speed
     private void getDownloadSpeed() {
