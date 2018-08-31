@@ -1,0 +1,11 @@
+{
+  "name": "networkmeter",
+  "version": "1.0.0",
+  "description": "Initial Network Speed Receiver",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Girish D. Fuluskar",
+  "license": "ISC"
+}
