@@ -184,9 +184,9 @@ public class NetworkMeter extends CordovaPlugin {
         }
 
         if (!mUnits.equals(" KB") && mDownloadSpeedWithDecimals < 100) {
-            mDownloadSpeedOutput = String.format(Locale.US, "%.1f", mDownloadSpeedWithDecimals);
+            mDownloadSpeedOutput = String.format(Locale.US, "%.1f", mDownloadSpeedWithDecimals) + " " + mUnits;
         } else {
-            mDownloadSpeedOutput = Integer.toString((int) mDownloadSpeedWithDecimals);
+            mDownloadSpeedOutput = Integer.toString((int) mDownloadSpeedWithDecimals)+ " " + mUnits;
         }
 
     }
