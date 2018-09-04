@@ -73,7 +73,7 @@ public class NetworkMeter extends CordovaPlugin {
     }
 	
 	//Get Bitmap From String
-	private Bitmap getBitmapFromString(CallbackContext callbackContext){
+	private void getBitmapFromString(CallbackContext callbackContext){
 		this.createBitmapFromString(mDownloadSpeedOutput, mUnits);
 		callbackContext.success(""+ mDownloadSpeedOutput);
 	}
