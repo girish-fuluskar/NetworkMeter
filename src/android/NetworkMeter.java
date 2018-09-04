@@ -187,18 +187,13 @@ public class NetworkMeter extends CordovaPlugin {
             mDownloadSpeedWithDecimals = (float) mDownloadSpeed / (float) 1000000;
             mUnits = " MB";
 
-        } else if (mDownloadSpeed >= 1000) {
+        } else {
             mDownloadSpeedWithDecimals = (float) mDownloadSpeed / (float) 1000;
             mUnits = " KB";
-        } else {
-			mDownloadSpeedWithDecimals = (float) mDownloadSpeed;
-            mUnits = " BY";
-		}
+        }
 			
 
         if (!mUnits.equals(" KB") && mDownloadSpeedWithDecimals < 100) {
-            mDownloadSpeedOutput = String.format(Locale.US, "%.1f", mDownloadSpeedWithDecimals) + " " + mUnits;
-        } else if (!mUnits.equals(" BY")) {
             mDownloadSpeedOutput = String.format(Locale.US, "%.1f", mDownloadSpeedWithDecimals) + " " + mUnits;
         } else {
             mDownloadSpeedOutput = Integer.toString((int) mDownloadSpeedWithDecimals)+ " " + mUnits;
