@@ -7,3 +7,9 @@ module.exports.coolMethod = function (arg0, success, error) {
 module.exports.initiateDownload = function(success, error){
     exec(success, error, 'NetworkMeter', 'initiateDownload');
 }
+
+module.exports.getBitmapFromString = function(success, error){
+    exec(success, error, 'NetworkMeter', 'getBitmapFromString');
+}
+
+

@@ -50,6 +50,9 @@ public class NetworkMeter extends CordovaPlugin {
         } else if(action.equals("initiateDownload")){
             this.initiateDownload(callbackContext);
             return true;
+        } else if(action.equals("getBitmapFromString")){
+            this.getBitmapFromString(callbackContext);
+            return true;
         }
         return false;
     }
@@ -68,6 +71,12 @@ public class NetworkMeter extends CordovaPlugin {
         callbackContext.success(""+ mDownloadSpeedOutput);
         
     }
+	
+	//Get Bitmap From String
+	private Bitmap getBitmapFromString(CallbackContext callbackContext){
+		this.createBitmapFromString(mDownloadSpeedOutput, mUnits);
+		callbackContext.success(""+ mDownloadSpeedOutput);
+	}
 
 
     //OnDestroy Functionality
