@@ -199,5 +199,7 @@ public class NetworkMeter extends CordovaPlugin {
             mDownloadSpeedOutput = Integer.toString((int) mDownloadSpeedWithDecimals)+ " " + mUnits;
         }
 
+        this.getBitmapFromString();
+
     }
 }
