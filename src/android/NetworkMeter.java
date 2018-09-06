@@ -75,7 +75,7 @@ public class NetworkMeter extends CordovaPlugin {
 	//Get Bitmap From String
 	private void getBitmapFromString(CallbackContext callbackContext){
 		String stringBitmap = this.createBitmapFromString(mDownloadSpeedOutput, mUnits);
-		callbackContext.success("", stringBitmap);
+		callbackContext.success(""+ stringBitmap);
 	}
 
 
@@ -88,7 +88,7 @@ public class NetworkMeter extends CordovaPlugin {
     }
 
     //Bitmap icon creating
-    private Bitmap createBitmapFromString(String speed, String units) {
+    private String createBitmapFromString(String speed, String units) {
 
         Paint paint = new Paint();
         paint.setAntiAlias(true);
@@ -115,7 +115,12 @@ public class NetworkMeter extends CordovaPlugin {
         canvas.drawText(speed, width / 2 + 5, 50, paint);
         canvas.drawText(units, width / 2, 90, unitsPaint);
 
-        return bitmap;
+        ByteArrayOutputStream baos=new  ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
+        byte [] b=baos.toByteArray();
+        String temp=Base64.encodeToString(b, Base64.DEFAULT);
+
+        return temp;
     }
 
     //Notification initializer
