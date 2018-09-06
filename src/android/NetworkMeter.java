@@ -23,6 +23,8 @@ import android.net.TrafficStats;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import java.io.*;
+import java.util.Base64;
 
 import java.util.Locale;
 
