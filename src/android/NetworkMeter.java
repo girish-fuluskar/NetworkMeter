@@ -51,7 +51,7 @@ public class NetworkMeter extends CordovaPlugin {
             this.initiateDownload(callbackContext);
             return true;
         } else if(action.equals("getBitmapFromString")){
-            this.getBitmapFromString();
+            this.getBitmapFromString(callbackContext);
             return true;
         }
         return false;
